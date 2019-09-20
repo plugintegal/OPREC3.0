@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Kotlin MVP</string>
+    <string name="title_activity_detail">Detail user</string>
+</resources>
