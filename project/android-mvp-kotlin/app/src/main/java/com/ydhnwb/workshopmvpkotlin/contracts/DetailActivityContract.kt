@@ -2,6 +2,8 @@ package com.ydhnwb.workshopmvpkotlin.contracts
 
 import com.ydhnwb.workshopmvpkotlin.models.User
 
+//sebuah perjanjian mengenai apa apa saja yang
+//bisa dilakukan oleh Detail Activity
 interface DetailActivityContract {
     interface View {
         fun isLoading(state : Boolean)

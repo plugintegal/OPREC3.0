@@ -22,6 +22,7 @@ class DetailActivity : AppCompatActivity(), DetailActivityContract.View {
         getUser()
     }
 
+	//jika STATE itu true, loading akan muncul. begitu sebaliknya
     override fun isLoading(state: Boolean) {
         if(state){
             loading.visibility = View.VISIBLE
@@ -30,6 +31,8 @@ class DetailActivity : AppCompatActivity(), DetailActivityContract.View {
         }
     }
 
+	//saat presenter sudah berhasil GET satu user,
+	//maka akan dibind ke UI melalui method di bawah ini
     override fun bind(user: User) {
         user_fullname.text = user.name
         user_email.text = user.email
@@ -37,6 +40,7 @@ class DetailActivity : AppCompatActivity(), DetailActivityContract.View {
 
     override fun toast(message: String) = Toast.makeText(this@DetailActivity, message, Toast.LENGTH_LONG).show()
 
+	//get user by id dari server
     private fun getUser() = presenter.fetchUserById(intent.getIntExtra("ID", 0))
 
     override fun onDestroy() {
